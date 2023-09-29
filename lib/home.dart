@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dmi_moviedb_practica8_200527_flutter/common/HttpHandler.dart';
 import 'package:dmi_moviedb_practica8_200527_flutter/media_list.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
 class Home extends StatefulWidget {
   const Home(
       {super.key}); // Constructor de Home con un parámetro opcional llamado key.
@@ -11,7 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   // Define una clase que extiende State y representa el estado interno de Home.
-  
+
   // Estilo de fuente personalizado
   final TextStyle customTextStyle = const TextStyle(
     fontFamily: 'MiFuente', // Nombre de la fuente definido en pubspec.yaml
@@ -23,12 +25,18 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // Crear una página Scaffold que contiene la estructura principal de la aplicación
-    return  Scaffold(
-      appBar:  AppBar(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
         // Barra de navegación superior (AppBar) con un título y un botón de búsqueda
-        title: const Text("MovieApp-200327"), // Título de la aplicación
+        title: Text(
+          '200527 - TheMovieDb',
+          style: TextStyle(fontFamily: 'Bebas', fontSize: 24),
+          selectionColor: Colors.white,
+        ), // Título de la aplicación
+        centerTitle: true,
         actions: <Widget>[
-           IconButton(
+          IconButton(
             icon: const Icon(
               Icons.search,
               color: Colors.white,
@@ -39,80 +47,94 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      drawer:  Drawer(
-        // Menú lateral (Drawer) que se despliega desde el borde izquierdo
-        child:  ListView(children: <Widget>[
-           const DrawerHeader(
-              child:  Material()), // Encabezado del menú lateral
-
-          // Elemento del menú "peliculas"
-           ListTile(
-            title:  Text(
-              "peliculas",
-              style:
-                  customTextStyle, // Aplica el estilo de fuente personalizado
-            ),
-            trailing: const Icon(Icons.local_movies), // Icono de películas
+      drawer: Drawer(
+        child: Container(
+          color: Colors.black,
+          child: ListView(
+            children: [
+              DrawerHeader(
+                  child: Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage('asset/icon/MovieTube_Logo.png'))),
+                ),
+              )),
+              ListTile(
+                leading: Icon(Icons.local_movies),
+                title: Text('Peliculas',
+                    style: TextStyle(fontFamily: 'Bebas', fontSize: 24)),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.live_tv),
+                title: Text('Television',
+                    style: TextStyle(fontFamily: 'Bebas', fontSize: 24)),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.close),
+                title: Text('Cerrar',
+                    style: TextStyle(fontFamily: 'Bebas', fontSize: 24)),
+                onTap: () => Navigator.of(context).pop(),
+              )
+            ],
           ),
-
-          // Separador en el menú
-           const Divider(
-            height: 5.0,
-          ),
-
-          // Elemento del menú "Television"
-           ListTile(
-            title:  Text(
-              "Television",
-              style:
-                  customTextStyle, // Aplica el estilo de fuente personalizado
-            ),
-            trailing: const Icon(Icons.live_tv), // Icono de televisión
-          ),
-
-          // Separador en el menú
-           const Divider(
-            height: 5.0,
-          ),
-
-          // Elemento del menú "Cerrar"
-           ListTile(
-            title:  Text(
-              "Cerrar",
-              style:
-                  customTextStyle, // Aplica el estilo de fuente personalizado
-            ),
-            trailing: const Icon(Icons.live_tv), // Icono de televisión
-            onTap: () => Navigator.of(context)
-                .pop(), // Cierra el menú al tocar este elemento
-          ),
-        ]),
+        ),
       ),
       body: PageView(
-        children: <Widget>[
-           MediaList()
-        ],
+        children: <Widget>[MediaList()],
       ),
-      bottomNavigationBar:  BottomNavigationBar(
-        // Barra de navegación inferior (BottomNavigationBar) con iconos y etiquetas
-        items: _obtenerIconos(),
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        padding: EdgeInsets.all(10),
+        child: GNav(
+          padding: EdgeInsets.only(right: 12, left: 12, bottom: 25, top: 25),
+          gap: 5,
+          tabBackgroundColor: Colors.grey.shade800,
+          tabMargin: EdgeInsets.all(3),
+          textStyle: TextStyle(
+              fontFamily: 'Bebas', fontSize: 20, color: Colors.tealAccent),
+          tabs: const [
+            GButton(
+              icon: Icons.home,
+              text: 'Inicio',
+            ),
+            GButton(
+              icon: Icons.trending_up,
+              text: 'Populares',
+            ),
+            GButton(
+              icon: Icons.flip_camera_android,
+              text: 'Proximamente',
+            ),
+            GButton(
+              icon: Icons.favorite_border_outlined,
+              text: 'Mejor Valoradas',
+            ),
+          ],
+          backgroundColor: Colors.black,
+          color: Colors.white,
+          activeColor: Colors.tealAccent,
+        ),
       ),
     );
   }
 
   // Método para obtener los elementos de la barra de navegación inferior
   List<BottomNavigationBarItem> _obtenerIconos() {
-    return const [
-       BottomNavigationBarItem(
-        icon:  Icon(Icons.thumb_up), // Icono de pulgar hacia arriba
+    return [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.thumb_up), // Icono de pulgar hacia arriba
         label: ("populares"), // Etiqueta para la opción "populares"
       ),
-       BottomNavigationBarItem(
-        icon:  Icon(Icons.update), // Icono de actualización
+      BottomNavigationBarItem(
+        icon: Icon(Icons.update), // Icono de actualización
         label: ("Proximamente"), // Etiqueta para la opción "Proximamente"
       ),
-       BottomNavigationBarItem(
-        icon:  Icon(Icons.star), // Icono de estrella
+      BottomNavigationBarItem(
+        icon: Icon(Icons.star), // Icono de estrella
         label: ("Mejor valorados"), // Etiqueta para la opción "Mejor valorados"
       ),
     ];

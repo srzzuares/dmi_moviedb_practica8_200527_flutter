@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:dmi_moviedb_practica8_200527_flutter/common/Util.dart';
 
 class Media {
