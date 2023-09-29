@@ -25,7 +25,7 @@ Practica 7
 | Nombre | \*_Practica 8_ App Flutter\* |
 | Descripción | Este proyecto representa una aplicación de muestra desarrollada en Flutter que muestra una página de inicio de la aplicación "MovieApp-200527", La aplicación utiliza un estilo de fuente personalizado (`customTextStyle`) que se define en el código. Esta fuente personalizada se especifica en el archivo `pubspec.yaml` y se aplica a los elementos de texto en la aplicación para darle un aspecto distintivo. |
 | Fecha de Carga | 22/09/23 |
-                                                                                 |
+                                                                                 
 
 | No. |                     Pruebas                     |
 | :-: | :---------------------------------------------: |
