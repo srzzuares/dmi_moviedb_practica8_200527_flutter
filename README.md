@@ -29,7 +29,7 @@ Practica 7
 
 | No. |                     Pruebas                     |
 | :-: | :---------------------------------------------: |
-|  1  |     ![Prueba 1 de inicio a la aplicacion](https://github.com/srzzuares/dmi_moviedb_Practica8_200527_flutter/blob/main/asset/pruebas/p-1.png)     |
+|  1  |     ![Prueba 1 de inicio a la aplicacion](https://github.com/srzzuares/dmi_moviedb_practica8_200527_flutter/blob/main/asset/pruebas/p-1.png)     |
 |  2  |   ![Prueba 2 de mismo inicio en otra pantalla](https://github.com/srzzuares/dmi_moviedb_Practica7_200527_flutter/blob/main/asset/pruebas/p-2.png)   |
 |  3  | ![Prueba 3 de Tocar el boton drawer](https://github.com/srzzuares/dmi_moviedb_Practica7_200527_flutter/blob/main/asset/pruebas/p-3.png) |
 
