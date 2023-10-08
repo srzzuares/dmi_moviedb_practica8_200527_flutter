@@ -1,4 +1,4 @@
-# Aplicacion StateFul Flutter Practica - 8 - MovieDb - Drawer y BarNavigation
+# Aplicacion StateFul Flutter Practica - 8 - MovieDb - Drawer y BarNavigation - Visualizacion de la primera portada de la pelicula
 
 [![Logos de la utxj](https://i.postimg.cc/15q3LFXF/Banner-de-Twitch-Nubes-Gamer-Chica-Morado.png)](https://postimg.cc/MvzwBvyZ)
 
@@ -6,7 +6,7 @@
 
 # DMI_Practica8_200527
 
-Practica 7
+Practica 8
 
 # Universidad Tecnológica de Xicotepec de Juárez
 
@@ -23,8 +23,8 @@ Practica 7
 | Característica | Información |
 | :------------: | :------------: |
 | Nombre | \*_Practica 8_ App Flutter\* |
-| Descripción | Este proyecto representa una aplicación de muestra desarrollada en Flutter que muestra una página de inicio de la aplicación "MovieApp-200527", La aplicación utiliza un estilo de fuente personalizado (`customTextStyle`) que se define en el código. Esta fuente personalizada se especifica en el archivo `pubspec.yaml` y se aplica a los elementos de texto en la aplicación para darle un aspecto distintivo. |
-| Fecha de Carga | 22/09/23 |
+| Descripción | Este proyecto se refleja lo que es la portada de las peliculas que obtenemos de la api key de la pagina MovieDb. |
+| Fecha de Carga | 29/09/23 |
                                                                                  
 
 | No. |                     Pruebas                     |
